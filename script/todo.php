@@ -1,5 +1,7 @@
 <?php
 
+// @Todo: Add alt languages Check
+
 class Storage
 {
     public function directories(string $path): DirectoryIterator

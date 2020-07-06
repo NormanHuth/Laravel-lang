@@ -9,6 +9,18 @@
             "email": "caouecs@caouecs.net"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "caouecs\\LaravelLang\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "caouecs\\LaravelLang\\LangServiceProvider"
+            ]
+        }
+    },
     "suggest": {
         "overtrue/laravel-lang": "Command to add languages in your project",
         "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",

@@ -12,7 +12,45 @@ In this repository, you can find the lang files for the framework PHP, [Laravel 
 * For Laravel 5 : run `composer require caouecs/laravel-lang:~2.0` in your project folder
 * For Laravel 4 : run `composer require caouecs/laravel-lang:~1.0` in your project folder
 * Files of languages are in "vendor/caouecs/laravel-lang" directory
-* Copy the folders of languages that you want, in the *resources/lang* folder of your Laravel application (*app/lang* in Laravel 4).
+
+##### Method 1
+Copy the folders of languages that you want, in the *resources/lang* folder of your Laravel application (*app/lang* in Laravel 4).
+(You can find the german informal "Du" form in the subfolders `_alt`)
+
+##### Method 2 (Laravel 5.5 and up)
+The service provider will automatically get registered. Or you may manually add the service provider in your config/app.php file:
+```php
+    'providers' => [
+    // ...
+        caouecs\LaravelLang\LangServiceProvider::class,
+    // ...
+    ];
+```
+
+You can publish one language:
+```
+php artisan laravel:lang --languages=de
+```
+Multiple languages
+```
+php artisan laravel:lang --languages=de,fr,ca
+```
+Or all languages:
+```
+php artisan laravel:lang --languages=all
+```
+If you always want to overwrite exists files without a security question, you may use the --force flag:
+```
+php artisan laravel:lang --languages=de,fr,ca --force
+```
+You will get an overview and possible languages if you use this command without any flag.
+```
+php artisan laravel:lang
+```
+or
+```
+php artisan laravel:lang --force
+```
 
 #### Via GitHub
 
@@ -21,7 +59,7 @@ In this repository, you can find the lang files for the framework PHP, [Laravel 
 * Choose the branch:
     * `laravel4` for Laravel 4 project
     * `master` for Laravel 5, 6, 7 projects
-* Copy the folders of languages that you want, in *resources/lang* folder of your Laravel application (*app/lang* in Laravel 4).
+* Copy the folders of languages that you want, in *resources/lang* folder of your Laravel application (*app/lang* in Laravel 4). (You can find the german informal "Du" form in the subfolders `_alt`)
 
 #### Via SVN
 
